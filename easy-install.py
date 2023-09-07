@@ -147,14 +147,9 @@ def setup_prod(project: str, sites, email: str, version: str = None) -> None:
 					[
 						which("docker"),
 						"compose",
-						"-f",
 						"compose.yaml",
-						"-f",
 						"overrides/compose.mariadb.yaml",
-						"-f",
 						"overrides/compose.redis.yaml",
-						# "-f", "overrides/compose.noproxy.yaml", TODO: Add support for local proxying without HTTPs
-						"-f",
 						"overrides/compose.https.yaml",
 						"--env-file",
 						".env",
@@ -177,7 +172,6 @@ def setup_prod(project: str, sites, email: str, version: str = None) -> None:
 					"compose",
 					"-p",
 					project,
-					"-f",
 					compose_file_name,
 					"up",
 					"-d",
@@ -207,7 +201,6 @@ def setup_dev_instance(project: str):
 				[
 					"docker",
 					"compose",
-					"-f",
 					"devcontainer-example/docker-compose.yml",
 					"up",
 					"-d",
