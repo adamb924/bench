@@ -147,8 +147,6 @@ def setup_prod(project: str, sites, email: str, version: str = None) -> None:
 					[
 						which("docker"),
 						"compose",
-						#"--project-name",
-						#project,
 						"-f",
 						"compose.yaml",
 						"-f",
@@ -211,8 +209,6 @@ def setup_dev_instance(project: str):
 					"compose",
 					"-f",
 					"devcontainer-example/docker-compose.yml",
-					"--project-name",
-					project,
 					"up",
 					"-d",
 				],
