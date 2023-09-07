@@ -147,8 +147,8 @@ def setup_prod(project: str, sites, email: str, version: str = None) -> None:
 					[
 						which("docker"),
 						"compose",
-						"--project-name",
-						project,
+						#"--project-name",
+						#project,
 						"-f",
 						"compose.yaml",
 						"-f",
